@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #174b35;
+  --color-deep: #103a2b;
+  --color-cream: #f2f0e8;
+  --color-warmwhite: #fafaf6;
+  --color-coffee: #6f452c;
+  --color-gold: #c6a15b;
+  --color-charcoal: #202522;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 120s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-16px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+body {
+  @apply bg-warmwhite text-charcoal font-sans antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100svh;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  width: 100%;
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

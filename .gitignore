@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+# Large video files excluded from Gi
+Exclude large hero videos
+/clip*.mp4
+/public/videos/hero/*.mp4
